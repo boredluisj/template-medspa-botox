@@ -8,17 +8,11 @@ const Hero = () => {
       {/* Background Image / Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80"
+        <img 
+          src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80"
+          alt="Premium Medspa Facial"
           className="w-full h-full object-cover object-center opacity-70"
-        >
-          {/* Relaxing spa/water/wellness video from Pexels */}
-          <source src="https://videos.pexels.com/video-files/4490548/4490548-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Soft Glowing Orbs */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-200/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 z-5" />
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-accent-100/20 rounded-full blur-[100px] translate-y-1/2 z-5" />

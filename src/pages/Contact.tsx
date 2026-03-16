@@ -118,12 +118,19 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* Map Placeholder */}
-      <div className="h-96 w-full bg-gray-200 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-gray-400 flex-col gap-2">
-          <MapPin size={48} />
-          <span className="font-medium">Interactive Map Integration Here</span>
-        </div>
+      {/* Interactive Map */}
+      <div className="h-[500px] w-full bg-gray-200 relative overflow-hidden border-t border-gray-100">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105650.04169557458!2d-118.49015094396263!3d34.07297129528655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA!5e0!3m2!1sen!2sus!4v1709664556485!5m2!1sen!2sus" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen={true} 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Aura Aesthetics Clinic Location"
+          className="grayscale contrast-125 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+        ></iframe>
       </div>
     </>
   );
