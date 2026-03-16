@@ -30,7 +30,7 @@ const Navbar = () => {
   ];
 
   // Determine if we should use transparent navbar (only on pages with dark hero)
-  const isDarkHeroPage = location.pathname === '/services' || location.pathname === '/contact' || location.pathname === '/';
+  const isDarkHeroPage = location.pathname === '/services' || location.pathname === '/contact';
   const showTransparent = isDarkHeroPage && !isScrolled && !isMobileMenuOpen;
 
   return (
