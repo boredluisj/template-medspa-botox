@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import AuraLogo from './AuraLogo';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLuxuryClick } from '../hooks/useLuxuryClick';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const playClick = useLuxuryClick();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +65,8 @@ const Navbar = () => {
           ))}
           <Link 
             to="/contact" 
-            className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-500 shadow-lg ${
+            onMouseDown={playClick}
+            className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-500 shadow-lg active:scale-95 ${
               showTransparent
                 ? 'bg-white text-dark hover:bg-primary-50 shadow-white/10'
                 : 'bg-dark text-white hover:bg-gray-800 shadow-dark/10'
@@ -108,7 +111,8 @@ const Navbar = () => {
               ))}
               <Link 
                 to="/contact" 
-                className="mt-4 px-10 py-4 rounded-full bg-dark text-white text-lg font-medium shadow-xl shadow-dark/20"
+                onMouseDown={playClick}
+                className="mt-4 px-10 py-4 rounded-full bg-dark text-white text-lg font-medium shadow-xl shadow-dark/20 active:scale-95"
               >
                 Book Free Consultation
               </Link>
