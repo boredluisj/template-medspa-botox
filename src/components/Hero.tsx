@@ -3,6 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Sparkles, ArrowRight, ShieldCheck, Heart, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLuxuryClick } from '../hooks/useLuxuryClick';
+import { Canvas } from '@react-three/fiber';
+import { Environment } from '@react-three/drei';
+import { AuraOrb } from './AuraOrb';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,6 +46,16 @@ const Hero = () => {
         {/* Soft Glowing Orbs */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-200/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 z-5" />
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-accent-100/20 rounded-full blur-[100px] translate-y-1/2 z-5" />
+
+        {/* Phase 6: WebGL 3D Aura Orb */}
+        <div className="absolute inset-0 z-10 mix-blend-screen opacity-90 pointer-events-none pr-40">
+          <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+            <Environment preset="city" />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+            <AuraOrb />
+          </Canvas>
+        </div>
       </motion.div>
 
       <motion.div 
